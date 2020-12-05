@@ -13,3 +13,5 @@ company_division_1 = CompanyDivision.create(name: "Company Division 1", company:
 user_1 = User.create(first_name: "John", last_name: "Doe", email: "jdoe@jdoe.com", password: "testing123", company: company_1)
 
 auction_1 = Auction.create(name: "Auction 1", description: "The first auction!", company_division: company_division_1)
+
+item_1 = Item.create(name: "Item 1", auction: auction_1)
