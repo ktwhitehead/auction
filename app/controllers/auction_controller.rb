@@ -1,5 +1,5 @@
 class AuctionController < ApplicationController
   def list
-    Acution.all
+    json_response(auctions: Auction.all.as_json)
   end
 end
