@@ -4,7 +4,7 @@ class User < ApplicationRecord
   belongs_to :company
 
   validates_presence_of :first_name, :last_name, :email, :password_digest
-  # validates_uniqueness_of :email
+  validates_uniqueness_of :email, message: "is already assocaited with another user."
 
   # rescue ActiveRecord::RecordNotUnique
   #   puts("KEATON OK")

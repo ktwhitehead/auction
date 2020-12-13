@@ -9,8 +9,8 @@ class UsersController < ApplicationController
     company_division = CompanyDivision.create!(name: "My Company", company: company)
     user = User.create!(**user_params, company: company)
 
-    rescue ActiveRecord::RecordNotUnique
-      raise raise(ExceptionHandler::EmailTaken, Message.email_taken)
+    # rescue ActiveRecord::RecordNotUnique
+    #   raise raise(ExceptionHandler::EmailTaken, Message.email_taken)
 
     auth_token = AuthenticateUser.new(user.email, user.password).call
     response = { message: Message.account_created, auth_token: auth_token }
